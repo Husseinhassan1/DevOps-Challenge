@@ -32,23 +32,23 @@ To set up the Git hook and maintain consistent commit messages, follow these ste
 1. Clone this repository to your local development environment:
 
 ```console
-user@user:~$ git clone https://github.com/Husseinhassan1/DevOps-Challenge
+git clone https://github.com/Husseinhassan1/DevOps-Challenge
 ```
 
 2. Change your working directory to the cloned repository:
 ```console
-user@user:~$ cd your-repo
+cd your-repo
 ```
 
 3. Configure Git to use the hook in the `.githooks` directory:
 
 ```console
-user@user:~$ git config core.hooksPath .githooks
+git config core.hooksPath .githooks
 ```
 
 4. Make the `commit-msg` script executable by running the following command:
 ```console
-user@user:~$ chmod +x .githooks/commit-msg
+chmod +x .githooks/commit-msg
 ```
 
 
