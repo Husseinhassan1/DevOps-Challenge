@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Regular expression to match the commit message format
+commit_regex="^(feature|fix|refactor|wip): .{1,50}$"
+
+if ! grep -iqE "$commit_regex" "$1"; then
+  echo "Error: Invalid commit message format. Please use one of the following commit types and limit the description to a maximum of 50 characters:
+
+  - feature: for new feature additions.
+  - fix: for bug fixes.
+  - refactor: for code refactoring.
+  - wip: for work in progress commits that will be pushed later.
+
+Commit message format should be: <type>: <description>
+
+Examples:
+  - feature: Add user registration functionality
+  - fix: Fix issue with login validation
+  - refactor: Simplify database query code
+  - wip: Implement user profile page"
+  exit 1
+fi
