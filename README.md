@@ -25,7 +25,34 @@ Examples of a valid commit message:
 
 ## Using the Git Hook
 
-A Git `commit-msg` hook is in place to enforce the commit message format. If you attempt to commit with an invalid format, the hook will prevent the commit and display an error message that lists the valid commit types and provides examples of valid commit messages.
+A Git `commit-msg` hook is included in this repository to enforce the commit message format. The hook is located in the `.githooks` directory.
+
+To set up the Git hook and maintain consistent commit messages, follow these steps:
+
+1. Clone this repository to your local development environment:
+
+```console
+user@user:~$ git clone https://github.com/Husseinhassan1/DevOps-Challenge
+```
+
+2. Change your working directory to the cloned repository:
+```console
+user@user:~$ cd your-repo
+```
+
+3. Configure Git to use the hook in the `.githooks` directory:
+
+```console
+user@user:~$ git config core.hooksPath .githooks
+```
+
+4. Make the `commit-msg` script executable by running the following command:
+```console
+user@user:~$ chmod +x .githooks/commit-msg
+```
+
+
+With these steps, the `commit-msg` hook will be enabled for your local clone of the repository, ensuring that a consistent and well-organized commit messages is maintained.
 
 ## Explanation of How the Solution Works
 
@@ -35,14 +62,5 @@ A Git `commit-msg` hook is in place to enforce the commit message format. If you
 
 3. The error message includes a list of valid commit types and provides examples of properly formatted commit messages for reference.
 
-### To make the Git hook work, follow these steps:
 
-1. Navigate to your local Git repository.
-
-2. Inside the repository, navigate to the `.git/hooks` directory.
-
-3. If the `commit-msg` file doesn't exist, you can create it. You can also copy the provided `commit-msg` script into this directory.
-
-4. Make the `commit-msg` script executable by running the following command:
-   `chmod +x .git/hooks/commit-msg`
 
